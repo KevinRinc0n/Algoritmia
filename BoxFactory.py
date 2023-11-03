@@ -8,9 +8,19 @@
 
 # The string has a length greater or equal to one and contains only letters from to .az
 
-# Examples:
-# s="aaabbbbhaijjjm"
-# printer_error(s) => "0/14"
 
-# s="aaaxbbbbyyhwawiwjjjwwm"
-# printer_error(s) => "8/22"
+def printer_error(s):
+    error_count = 0
+    total_length = len(s)
+    
+    for char in s:
+        if char not in "abcdefghijklm":
+            error_count += 1
+    
+    return "{}/{}".format(error_count, total_length)
+
+s1 = "aaabbbbhaijjjm"
+print(printer_error(s1))  
+
+s2 = "aaaxbbbbyyhwawiwjjjwwm"
+print(printer_error(s2))  
